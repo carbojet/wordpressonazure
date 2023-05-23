@@ -1,0 +1,86 @@
+/* Custom CSS styles */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Add flexbox and responsive width */
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center align the items horizontally */
+  align-items: center; /* Center align the items vertically */
+}
+
+.logo {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: center; /* Center align the logo horizontally */
+}
+
+.horizontal-menu {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: center; /* Center align the menu horizontally */
+}
+
+.horizontal-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.horizontal-menu ul li {
+  margin-left: 20px;
+}
+
+.horizontal-menu ul li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+.banner {
+  height: 300px;
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.email-subscription {
+  padding: 20px;
+}
+
+.events {
+  padding: 20px;
+}
+
+/* Add responsive width using CSS variables */
+:root {
+  --responsive--aligndefault-width: min(
+    calc(100vw - 8 * var(--global--spacing-horizontal)),
+    610px
+  );
+  --responsive--alignwide-width: min(
+    calc(100vw - 8 * var(--global--spacing-horizontal)),
+    1240px
+  );
+}
+
+@media only screen and (min-width: 822px) {
+  .logo,
+  .horizontal-menu {
+    flex-basis: var(--responsive--aligndefault-width);
+    max-width: var(--responsive--aligndefault-width);
+  }
+}
+
+@media only screen and (min-width: 1240px) {
+  .logo,
+  .horizontal-menu {
+    flex-basis: var(--responsive--alignwide-width);
+    max-width: var(--responsive--alignwide-width);
+  }
+}
